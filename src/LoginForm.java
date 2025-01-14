@@ -78,12 +78,16 @@ public class LoginForm extends JFrame {
                 User user = getValidation(email, password);
 
                 if (user != null) {
+                    // Show a welcome message
                     JOptionPane.showMessageDialog(LoginForm.this, 
                                                   "Welcome, " + user.getName() + "!", 
                                                   "Login Successful", 
                                                   JOptionPane.INFORMATION_MESSAGE);
-                    dispose(); // Close the login form
+
+                    // After successful login, launch the MenuGUI
+                    launchMenuGUI(); // Call to launch the menu
                 } else {
+                    // Show error message if validation fails
                     JOptionPane.showMessageDialog(LoginForm.this, 
                                                   "Invalid email or password.", 
                                                   "Login Failed", 
@@ -143,5 +147,25 @@ public class LoginForm extends JFrame {
                                           JOptionPane.ERROR_MESSAGE);
         }
         return null;
+    }
+
+    private void launchMenuGUI() {
+        // Hide the login form
+        setVisible(false);
+        dispose();
+
+        // Launch the MenuGUI
+        SwingUtilities.invokeLater(() -> {
+            MenuGUI menuGUI = new MenuGUI();
+            menuGUI.setVisible(true);
+        });
+    }
+
+    public static void main(String[] args) {
+        // Start the LoginForm when the application runs
+        SwingUtilities.invokeLater(() -> {
+            LoginForm loginForm = new LoginForm();
+            loginForm.initialize();
+        });
     }
 }

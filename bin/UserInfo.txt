@@ -1,0 +1,5 @@
+example,example@gmail.com,0987543,Jalan merak,123
+hafiz,hafiz@gmail.com,01139405855,12 Jalan Ampang,hafiz123
+hanif,hanif@example.com,76553436,Jalan Aman,hanif123
+alif,alif@gmail.com,0127253537,12 Jalan Angsana,alif321
+kimi,kimikimo@gmail.com,011987654,Jalan Seroja,kimi123

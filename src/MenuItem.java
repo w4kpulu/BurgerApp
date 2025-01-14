@@ -4,14 +4,16 @@ public class MenuItem extends User {
     private String type; // Type of menu item (e.g., "Burger", "Chicken", "Side", "Drink", "Combo")
     private MenuItem[] comboItems; // For Combo items
     private int quantity; // Quantity of the menu item
+    private String imageName; //image file name
 
     // Constructor for regular menu items
-    public MenuItem(String nm, String em, String np, String add, String ps,String name, double price, String type, int quantity) {
+    public MenuItem(String nm, String em, String np, String add, String ps,String name, double price, String type, int quantity,String imageName) {
         super(nm,em,np,add,ps);
         this.name = name;
         this.price = price;
         this.type = type;
         this.quantity = quantity;
+        this.imageName=imageName;
         this.comboItems = new MenuItem[0]; // Initialize to an empty array for non-combo items
     }
 
@@ -36,6 +38,10 @@ public class MenuItem extends User {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public String getImageName(){
+        return imageName;
     }
 
     public void setQuantity(int quantity) {
